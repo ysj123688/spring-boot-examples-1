@@ -1,0 +1,32 @@
+server:
+  port: ${PORT0:8888}
+
+spring:
+  jackson:
+    time-zone: Asia/Shanghai
+  cloud:
+    stream:
+      bindings:
+        bet_game_status_channel:
+          destination: bet_game_status
+          group: GAME
+          binder: bet_game_binder
+      binders:
+        bet_game_binder:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: ${BET_GAME_RMQ_HOST:192.168.5.237}
+                port: ${BET_GAME_RMQ_PORT:5672}
+                username: ${BET_GAME_RMQ_USERNAME:betgame}
+                password: ${BET_GAME_RMQ_PASSWORD:betgame}
+                virtual-host: ${BET_GAME_RMQ_VHOST:GAME}
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.stream: DEBUG
+    org.springframework.messaging: DEBUG
+    com.jerome: DEBUG
