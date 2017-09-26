@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://${DB_HOST:192.168.5.237}:${DB_PORT:3306}/${DB_NAME:test}
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:test}
     username: ${DB_USER_NAME:root}
-    password: ${DB_PWD:sa123;}
+    password: ${DB_PWD:123123}
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     # create 启动时清空数据表，并重新创建。
