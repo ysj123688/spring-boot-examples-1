@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * 游戏超时未开始中止
  * 启动类需要加注解：@EnableScheduling
  *
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @see <a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/html/scheduling.html">Task
  * Execution and Scheduling</a>
  * @see <a href="http://blog.csdn.net/prisonbreak_/article/details/49180307">使用Spring的@Scheduled实现定时任务</a>

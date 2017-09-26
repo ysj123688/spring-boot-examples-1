@@ -9,7 +9,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 
 /**
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @since 2017/7/11 22:52
  */
 

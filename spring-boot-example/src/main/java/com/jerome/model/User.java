@@ -3,7 +3,7 @@ package com.jerome.model;
 import lombok.Data;
 
 /**
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @since 2017/7/1 17:31
  */
 @Data

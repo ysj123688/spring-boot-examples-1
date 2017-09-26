@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @since 2017/7/1 08:33
  */
 @Controller

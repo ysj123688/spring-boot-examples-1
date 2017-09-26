@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 用户实体类
  *
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @since 2017/8/16 23:11
  */
 @Document(collection = "test_user")

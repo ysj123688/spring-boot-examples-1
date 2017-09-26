@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @since 2017/8/17 23:28
  */
 @RestController

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @since 2017/8/16 23:35
  */
 @RunWith(SpringRunner.class)

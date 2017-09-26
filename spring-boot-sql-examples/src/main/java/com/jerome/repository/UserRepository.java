@@ -17,7 +17,7 @@ import javax.transaction.Transactional;
 /**
  * 常用例子
  *
- * @author suzhida@soundbus.cn
+ * @author suzhida
  * @since 2017/7/12 08:45
  */
 @Repository
