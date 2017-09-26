@@ -24,4 +24,12 @@ public class RestTemplateTest {
         log.info("result = {}", result);
     }
 
+    // TODO postTest
+    @Test
+    public void postTest() {
+        String url = "http://www.baidu.com";
+        String result = restTemplate.getForObject(url, String.class);
+        log.info("result = {}", result);
+    }
+
 }
