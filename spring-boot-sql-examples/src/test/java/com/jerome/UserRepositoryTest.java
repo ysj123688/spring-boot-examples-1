@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * 方便是方便但是性能没有自己写的比如使用mybatis的好
- * 比如：批量删除、新增是一条一条sql执行的
+ * 比如：批量删除、新增从log上来看他也是一条一条sql执行的
  *
  * @author suzhida@soundbus.cn
  * @since 2017/7/12 09:29

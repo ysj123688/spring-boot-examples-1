@@ -8,12 +8,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import static org.hamcrest.Matchers.equalTo;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * @author suzhida@soundbus.cn
@@ -24,10 +29,10 @@ import org.springframework.web.context.WebApplicationContext;
 //@Transactional // 确保每次测试后的数据会被回滚
 public class TestControllerTest {
 
-    MockMvc mvc;
+    private MockMvc mvc;
 
     @Autowired
-    WebApplicationContext webApplicationContext;
+    private WebApplicationContext webApplicationContext;
 
     @Before
     public void setUp() throws JsonProcessingException {
@@ -43,6 +48,13 @@ public class TestControllerTest {
 
         Assert.assertEquals("error, status must 200", 200, status);
         Assert.assertEquals("error, return value is error", "123", content);
+    }
+
+    @Test
+    public void testFind2() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/test/find").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("123")));
     }
 
 }

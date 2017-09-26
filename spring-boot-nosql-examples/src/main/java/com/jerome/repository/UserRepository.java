@@ -4,15 +4,10 @@ import com.jerome.domain.User;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-import javax.transaction.Transactional;
 
 /**
  * 常用例子
@@ -21,7 +16,7 @@ import javax.transaction.Transactional;
  * @since 2017/7/12 08:45
  */
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends MongoRepository<User, String> {
 
     // 查询
     /**
@@ -54,35 +49,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * JPQL:select u from User u where u.name = ?1 limit (?2)
      */
     List<User> findByName(String name, Pageable pageable);
-
-    /**
-     * 使用@Query查询
-     */
-    @Query("select u from User u where u.name = :name and u.age = :age")
-    List<User> withNameAndAge(@Param("name") String name, @Param("age") int age);
-
-    /**
-     * 使用@Query查询
-     */
-    @Query("select u from User u where u.name = ?1")
-    List<User> withName(String name);
-
-    /**
-     * 使用@NamedQuery查询，实体类要定义@NamedQuery。
-     */
-    List<User> withNameAndAgeNamedQuery(String name, int age);
-
-    // 更新
-    /**
-     * 更新操作
-     *
-     * @return 受影响行数
-     */
-    @Modifying
-    @Transactional
-    @Query("update User u set u.name = ?1")
-    int setName(String name);
-
-    // 更多操作参考 http://docs.spring.io/spring-data/jpa/docs/1.11.4.RELEASE/reference/html/
 
 }
