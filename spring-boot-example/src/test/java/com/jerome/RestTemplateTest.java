@@ -1,7 +1,6 @@
 package com.jerome;
 
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.client.RestTemplate;
 
@@ -19,14 +18,6 @@ public class RestTemplateTest {
 
     @Test
     public void getTest() {
-        String url = "http://www.baidu.com";
-        String result = restTemplate.getForObject(url, String.class);
-        log.info("result = {}", result);
-    }
-
-    // TODO postTest
-    @Test
-    public void postTest() {
         String url = "http://www.baidu.com";
         String result = restTemplate.getForObject(url, String.class);
         log.info("result = {}", result);
