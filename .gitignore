@@ -1,2 +1,15 @@
-.idea
+target
+.settings
+*.log
+.idea/*
+*.class
+.classpath
+.project
 *.iml
+.metadata
+.factorypath
+.apt_generated
+.springBeans
+
+/.checkstyle
+/.fbExcludeFilterFile

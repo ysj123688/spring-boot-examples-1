@@ -7,21 +7,27 @@ spring:
   cloud:
     stream:
       bindings:
-        bet_game_status_channel:
-          destination: bet_game_status
-          group: GAME
-          binder: bet_game_binder
+        # 接和收的名字不能一样
+        test_user_event_input:
+          destination: test_user_event
+          group: TEST_USER_VHOST
+          binder: test_user_binder
+        # 接和收的名字不能一样
+        test_user_event_output:
+          destination: test_user_event
+          group: TEST_USER_VHOST
+          binder: test_user_binder
       binders:
-        bet_game_binder:
+        test_user_binder:
           type: rabbit
           environment:
             spring:
               rabbitmq:
-                host: ${BET_GAME_RMQ_HOST:192.168.5.237}
-                port: ${BET_GAME_RMQ_PORT:5672}
-                username: ${BET_GAME_RMQ_USERNAME:betgame}
-                password: ${BET_GAME_RMQ_PASSWORD:betgame}
-                virtual-host: ${BET_GAME_RMQ_VHOST:GAME}
+                host: ${RMQ_HOST:40.125.168.224}
+                port: ${RMQ_PORT:5672}
+                username: ${RMQ_USER:test_user}
+                password: ${RMQ_PASS:test_user_pwd}
+                virtual-host: ${RMQ_VHOST:TEST_USER_VHOST}
 
 logging:
   level:
